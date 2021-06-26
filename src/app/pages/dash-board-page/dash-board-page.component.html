@@ -1,1 +1,22 @@
-<p>dash-board-page works!</p>
+<div>
+  <div>
+    <div>Total</div>
+    <div>
+      <div>Total cases {{ dashBoardData.cases | number }}</div>
+
+      <div>Total deaths {{ dashBoardData.deaths | number }}</div>
+
+      <div>Total recovered {{ dashBoardData.recovered | number }}</div>
+    </div>
+  </div>
+  <div>
+    <div>Today</div>
+    <div>
+        <div>Cases {{ dashBoardData.todayCases | number }}</div>
+
+        <div>Deaths {{ dashBoardData.todayDeaths | number }}</div>
+  
+        <div>Recovered {{ dashBoardData.todayRecovered | number }}</div>
+    </div>
+  </div>
+</div>

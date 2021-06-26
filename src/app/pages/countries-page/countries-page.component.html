@@ -1,1 +1,100 @@
-<p>countries-page works!</p>
+<div class="country-page-container">
+  <div class="country-page-wrapper">
+    <p-dataView
+      #dv
+      [value]="countryListData"
+      [paginator]="true"
+      paginatorPosition="top"
+      [rows]="50"
+      filterBy="country"
+      layout="grid"
+      [sortField]="sortField"
+      [sortOrder]="sortOrder"
+    >
+      <ng-template pTemplate="header">
+        <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+          <p-dropdown
+            [options]="sortOptions"
+            [(ngModel)]="sortKey"
+            placeholder="Sort By"
+            (onChange)="onSortChange($event)"
+          ></p-dropdown>
+          <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+            <i class="pi pi-search"></i>
+            <input
+              type="search"
+              #search
+              pInputText
+              placeholder="Search by country"
+              (input)="filter(search.value, dv)"
+            />
+          </span>
+        </div>
+      </ng-template>
+
+      <ng-template pTemplate="paginatorleft" let-state>
+        {{ state.first }}
+      </ng-template>
+      <ng-template pTemplate="paginatorright">
+      </ng-template>
+      <ng-template let-item pTemplate="paginatordropdownitem">
+        {{ item.value }} - per page
+      </ng-template>
+
+      <ng-template let-country pTemplate="gridItem">
+        <div class="p-col-12 p-md-4">
+          <div class="country-list-item">
+            <div class="country-card-header">
+              <div class="country-flag-div">
+                <img
+                  class="country-flag-image"
+                  [src]="country.countryInfo.flag"
+                  [alt]="country.country"
+                />
+              </div>
+
+              <div class="country-name">{{ country.country }}</div>
+            </div>
+
+            <div class="data-value-container">
+              <div class="data-value-wrapper">
+                <div class="data-label">Cases</div>
+                <div class="data-value">{{ country.cases | number }}</div>
+              </div>
+
+              <div class="data-value-wrapper">
+                <div class="data-label">Deaths</div>
+                <div class="data-value">{{ country.deaths | number }}</div>
+              </div>
+
+              <div class="data-value-wrapper">
+                <div class="data-label">Recovered</div>
+                <div class="data-value">{{ country.recovered | number }}</div>
+              </div>
+            </div>
+
+            <div class="data-value-container">
+              <div class="data-value-wrapper">
+                <div class="data-label">Tests</div>
+                <div class="data-value">{{ country.tests | number }}</div>
+              </div>
+
+              <div class="data-value-wrapper">
+                <div class="data-label">Population</div>
+                <div class="data-value">
+                  {{ country.population | thousandSuff }}
+                </div>
+              </div>
+
+              <div class="data-value-wrapper">
+                <div class="edit-wrapper">
+                  <div class="pi pi-fw pi-pencil"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-dataView>
+  </div>
+</div>

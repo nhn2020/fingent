@@ -1,0 +1,92 @@
+.p-dataview .p-dataview-content {
+    background: #ffffff;
+    color: #495057;
+    border: 0 none;
+    padding: 0;
+    height: 60vh !important;
+        overflow: auto !important;
+}
+.country-page-container {
+  padding-left: 40px;
+  .country-page-wrapper {
+    padding: 15px 30px;
+    .p-dataview {
+      .p-paginator-top {
+        position: fixed !important;
+        top: 30px !important;
+        right: 300px !important;
+      }
+      .p-dataview-content {
+        height: 60vh !important;
+        overflow: auto !important;
+      }
+    }
+    .p-dataview .p-paginator-top {
+        border-width: 0 0 1px 0;
+        border-radius: 0;
+        position: absolute;
+        top: 10px;
+    }
+
+    .country-list-item {
+      width: 100%;
+      border: 1px solid gray;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #edecec;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      .country-card-header {
+        padding: 6px 0px;
+        .country-flag-div {
+          width: 60px;
+          height: 40px;
+          padding: 0;
+          max-width: 70px;
+          max-height: 40px;
+          overflow: hidden;
+          display: inline-block;
+          vertical-align: middle;
+
+          .country-flag-image {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        display: inline-flex;
+        .country-name {
+          padding-left: 15px;
+          font-size: 20px;
+          color: blue;
+          align-items: center;
+          display: flex;
+        }
+      }
+
+      .data-value-container {
+        display: flex;
+        padding-bottom: 7px;
+        .data-value-wrapper {
+          width: 200px;
+          .data-value {
+            font-weight: 700;
+          }
+          .edit-wrapper {
+            cursor: pointer;
+            display: flex;
+            border-radius: 40px;
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgb(16, 16, 194);
+            margin-top: 7px;
+            .pi-pencil {
+              color: blue;
+              padding: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

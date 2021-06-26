@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import * as _ from 'lodash';
 
 import { Credentials, CredentialsService } from './credentials.service';
+import { ConstantService } from '../shared/constants';
 
 export interface LoginContext {
   username: string;
@@ -18,21 +20,27 @@ export interface LoginContext {
 })
 export class AuthenticationService {
 
-  constructor(private credentialsService: CredentialsService) { }
+  constructor(private credentialsService: CredentialsService, private constantsService: ConstantService) { }
 
   /**
    * Authenticates the user.
    * @param context The login parameters.
    * @return The user credentials.
    */
-  login(context: LoginContext): Observable<Credentials> {
-    // Replace by proper authentication call
-    const data = {
-      username: context.username,
-      token: '123456'
+  login(params: LoginContext): Observable<Credentials> {
+    let mockResponse: any = {
+      isSuccess: false,
+      data: {}
     };
-    this.credentialsService.setCredentials(data, context.remember);
-    return of(data);
+    if(_.isEqual(params, this.constantsService.userCredentials)) {
+      mockResponse.isSuccess = true;
+      mockResponse.data = {
+        username: params.username,
+        token: '123456'
+      };
+    }
+    this.credentialsService.setCredentials(mockResponse.data, false);
+    return of(mockResponse);
   }
 
   /**

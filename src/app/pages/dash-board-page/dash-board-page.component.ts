@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashBoardService } from './dash-board.service';
 
 @Component({
   selector: 'app-dash-board-page',
@@ -7,11 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashBoardPageComponent implements OnInit {
 
-  constructor() { }
+  dashBoardData: any = {};
 
-  // https://corona.lmao.ninja/v2/all
+  constructor(
+    private dashBoardService: DashBoardService
+  ) { }
+
 
   ngOnInit(): void {
+    this._getDashBoardDetails();
+  }
+
+  private _getDashBoardDetails() {
+    // this.loaderProvider.showLoader(Constants.LOADING_COMPONENT.ON_CALL_LOOKUP);
+    this.dashBoardService.getGroup({}).subscribe(
+      res => {
+        // this.loaderProvider.hideLoader(Constants.LOADING_COMPONENT.ON_CALL_LOOKUP);
+        this._setData(res);
+      },
+      err => {
+        // this.loaderProvider.hideLoader(Constants.LOADING_COMPONENT.ON_CALL_LOOKUP);
+      }
+    );
+  }
+
+  private _setData(response: any) {
+    this.dashBoardData = response;
+
   }
 
 }

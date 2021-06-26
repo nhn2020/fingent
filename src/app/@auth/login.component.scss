@@ -1,29 +1,91 @@
 // @import "src/theme/theme-variables";
 // @import "~bootstrap/scss/mixins/_breakpoints";
-
 .login-container {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  .heading-container {
+    text-align: center;
+    font-size: 55px;
+    width: 100%;
+    .heading {
+      font-weight: 100;
+      color: grey;
+      text-transform: uppercase;
+    }
+  }
+  .form-container {
+    width: 100%;
+  }
+  .text-danger {
+    min-height: 30px;
+    color: red;
+    font-size: 14px;
+  }
+  .card-body {
+    padding: 60px 16px;
+  }
+  .card {
+    box-shadow: 0 0 6px grey;
+  }
+  .circle-corner {
+    position: absolute;
+    background-image: linear-gradient(to bottom, #0de893, #0842fc);
+    &.circle-big {
+      top: -50px;
+      left: -50px;
+      width: 300px;
+      height: 300px;
+      border-radius: 250px;
+    }
+    &.circle-small {
+      top: 170px;
+      left: -50px;
+      width: 120px;
+      height: 120px;
+      border-radius: 250px;
+    }
+  }
+  .login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+  }
 }
 
-.login-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 100%;
+@media (min-width: 768px) {
+  .login-container {
+    .heading-container {
+      width: calc(100% - 350px);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: inherit;
+      float: left;
+    }
+    .form-container {
+      width: 350px;
+      float: left;
+    }
+    .login-box {
+      padding: 0 60px;
+    }
+  }
 }
 
-.ng-invalid.ng-touched:not(form) {
-  border-left: 4px solid theme-color("danger");
+@media (min-width: 1024px) {
+  .login-container {
+    .heading-container {
+      width: calc(100% - 400px);
+    }
+    .form-container {
+      width: 400px;
+    }
+  }
 }
-
-// @include media-breakpoint-down(xs) {
-//   .container {
-//     width: 100%;
-//   }
-// }

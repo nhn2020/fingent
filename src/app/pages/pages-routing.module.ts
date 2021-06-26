@@ -12,12 +12,12 @@ const routes: Routes = [{
     {
       path: 'dashboard',
       component: DashBoardPageComponent,
-      // canActivate: [AuthenticationGuard],
+      canActivate: [AuthenticationGuard],
     },
     {
       path: 'countries',
       component: CountriesPageComponent,
-      // canActivate: [AuthenticationGuard],
+      canActivate: [AuthenticationGuard],
     },
     {
       path: '',
