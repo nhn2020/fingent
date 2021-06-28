@@ -11,19 +11,22 @@ import {InputTextModule} from 'primeng/inputtext';
 import {RatingModule} from 'primeng/rating';
 import {RippleModule} from 'primeng/ripple';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThousandPipeModule } from '@app/@pipes/thousandSuff/thousandSuffPipe.module';
+import { CountryDetailComponent } from './country-detail/country-detail.component';
 
 
 @NgModule({
   declarations: [
-    CountriesPageComponent
+    CountriesPageComponent,
+    CountryDetailComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     DataViewModule,
     ThousandPipeModule,
+    FormsModule, ReactiveFormsModule,
     // PanelModule,
     // DialogModule,
     DropdownModule,

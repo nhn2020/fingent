@@ -1,0 +1,50 @@
+.dashboard-container {
+  padding: 30px;
+
+  .content-wrapper {
+      padding: 15px;
+    .content-header {
+      margin-top: 5px;
+      position: relative;
+      font-size: 36px;
+      color: #c1c1c1;
+      margin-bottom: 15px;
+      &::after {
+        width: 94%;
+        border-top: 1px solid #c1c1c1;
+        top: 30px;
+        content: "";
+        position: absolute;
+        margin-left: 5px;
+      }
+    }
+    .details-card {
+      width: 100%;
+      border: 1px solid gray;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #edecec;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      height: 20vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .details-card-label {
+        color: blue;
+        display: flex;
+        width: 100%;
+        font-size: 18px;
+        justify-content: center;
+      }
+      .details-card-data {
+        color: blue;
+        width: 100%;
+        font-size: 26px;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+      }
+    }
+  }
+}

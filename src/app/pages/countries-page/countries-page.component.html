@@ -13,13 +13,14 @@
     >
       <ng-template pTemplate="header">
         <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+          <span class="header-label"> Countries </span>
           <p-dropdown
             [options]="sortOptions"
             [(ngModel)]="sortKey"
             placeholder="Sort By"
             (onChange)="onSortChange($event)"
           ></p-dropdown>
-          <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+          <div class="p-input-icon-left search-div p-mb-2 p-mb-md-0">
             <i class="pi pi-search"></i>
             <input
               type="search"
@@ -28,15 +29,14 @@
               placeholder="Search by country"
               (input)="filter(search.value, dv)"
             />
-          </span>
+          </div>
         </div>
       </ng-template>
 
       <ng-template pTemplate="paginatorleft" let-state>
         {{ state.first }}
       </ng-template>
-      <ng-template pTemplate="paginatorright">
-      </ng-template>
+      <ng-template pTemplate="paginatorright"> </ng-template>
       <ng-template let-item pTemplate="paginatordropdownitem">
         {{ item.value }} - per page
       </ng-template>
@@ -87,8 +87,11 @@
               </div>
 
               <div class="data-value-wrapper">
-                <div class="edit-wrapper">
-                  <div class="pi pi-fw pi-pencil"></div>
+                <div
+                  class="edit-wrapper"
+                  (click)="onEditCountryDetails(country)"
+                >
+                  <div class="pi pi-fw pi-pencil" title="Edit"></div>
                 </div>
               </div>
             </div>

@@ -1,10 +1,19 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { ConstantService } from '@app/shared/constants';
 @Component({
   selector: 'app-page',
-  template: `<router-outlet></router-outlet>`,
+  templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.scss'],
 })
 export class PageComponent {
-  title = 'covid';
+
+  constructor(private router: Router, constantsService: ConstantService) {
+
+  }
+
+  logout() {
+    sessionStorage.clear();
+    this.router.navigateByUrl('/login');
+  }
 }

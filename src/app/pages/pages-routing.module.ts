@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthenticationGuard } from '../@auth';
 import { CountriesPageComponent } from './countries-page/countries-page.component';
+import { CountryDetailComponent } from './countries-page/country-detail/country-detail.component';
 import { DashBoardPageComponent } from './dash-board-page/dash-board-page.component';
 import { PageComponent } from './pages.component';
 
@@ -24,12 +25,12 @@ const routes: Routes = [{
       redirectTo: 'dashboard',
       pathMatch: 'full',
     },
-    // {
-    //   path: '**',
-    //   component: NotFoundComponent,
-    // },
+    {
+      path: 'countries/:id',
+      component: CountryDetailComponent,
+    }
   ],
-  
+
 }];
 
 @NgModule({

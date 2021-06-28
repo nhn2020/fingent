@@ -1,0 +1,28 @@
+<div class="page-container">
+  <div class="side-bar-div">
+    <div class="icon-div">
+      <a
+        class="pi pi-microsoft"
+        [routerLink]="['dashboard']"
+        [routerLinkActive]="['active']"
+      >
+      </a>
+    </div>
+    <div class="icon-div">
+      <a
+        class="pi pi-flag"
+        [routerLink]="['countries']"
+        [routerLinkActive]="['active']"
+      >
+      </a>
+    </div>
+
+    <div
+      class="logout-icon-div icon-div pi pi-power-off"
+      (click)="logout()"
+    ></div>
+  </div>
+  <div class="router-outlet">
+    <router-outlet></router-outlet>
+  </div>
+</div>

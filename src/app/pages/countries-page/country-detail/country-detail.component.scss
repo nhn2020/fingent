@@ -1,0 +1,50 @@
+.con {
+    padding: 30px;
+    background: #f3f3fa;
+    height: 100vh;
+}
+
+.detail-form {
+    .flex-con {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 15px;
+        align-items: center;
+        .flex-item {
+            padding-right: 30px;
+            input {
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+            .err-msg {
+                font-size: 12px;
+                color: #b83939;
+            }
+        }
+    }
+}
+
+.btn {
+    opacity: .8;
+    min-width: 100px;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 2px;
+    margin: 20px 20px 0 0;
+    &:hover {
+        opacity: 1;
+    }
+    &:disabled {
+        cursor: not-allowed;
+    }
+    &.cancel-btn {
+        background: #a3a3a3;
+        border: 1px solid #a3a3a3;
+    }
+    &.submit-btn {
+        background: #24a0ed;
+        border: 1px solid #24a0ed;
+    }
+}

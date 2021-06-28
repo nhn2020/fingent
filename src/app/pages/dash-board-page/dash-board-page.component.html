@@ -1,22 +1,65 @@
-<div>
-  <div>
-    <div>Total</div>
-    <div>
-      <div>Total cases {{ dashBoardData.cases | number }}</div>
+<div class="dashboard-container">
+  <div class="content-wrapper">
+    <div class="content-header">Total</div>
 
-      <div>Total deaths {{ dashBoardData.deaths | number }}</div>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="details-card">
+          <div class="details-card-label">Total Cases</div>
+          <div class="details-card-data">
+            {{ dashBoardData.cases | number }}
+          </div>
+        </div>
+      </div>
 
-      <div>Total recovered {{ dashBoardData.recovered | number }}</div>
+      <div class="col-12 col-md-4">
+        <div class="details-card">
+          <div class="details-card-label">Total Deaths</div>
+          <div class="details-card-data">
+            {{ dashBoardData.deaths | number }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="details-card">
+          <div class="details-card-label">Total Recovered</div>
+          <div class="details-card-data">
+            {{ dashBoardData.recovered | number }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div>
-    <div>Today</div>
-    <div>
-        <div>Cases {{ dashBoardData.todayCases | number }}</div>
+  <div class="content-wrapper">
+    <div class="content-header">Today</div>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="details-card">
+          <div class="details-card-label">Cases</div>
+          <div class="details-card-data">
+            {{ dashBoardData.todayCases | number }}
+          </div>
+        </div>
+      </div>
 
-        <div>Deaths {{ dashBoardData.todayDeaths | number }}</div>
-  
-        <div>Recovered {{ dashBoardData.todayRecovered | number }}</div>
+      <div class="col-12 col-md-4">
+        <div class="details-card">
+          <div class="details-card-label">Deaths</div>
+          <div class="details-card-data">
+            {{ dashBoardData.todayDeaths | number }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="details-card">
+          <div class="details-card-label">Recovered</div>
+          <div class="details-card-data">
+            {{ dashBoardData.todayRecovered | number }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

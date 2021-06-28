@@ -12,7 +12,7 @@ import { PageComponent } from './pages.component';
   imports: [
     PagesRoutingModule,
     DashBoardPageModule,
-    CountriesPageModule
+    CountriesPageModule,
   ],
   providers: [],
 })
